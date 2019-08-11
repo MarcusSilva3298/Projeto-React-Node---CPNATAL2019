@@ -1,0 +1,65 @@
+<div style='font-family: Roboto'>
+    <div class = 'bg-success text-center' style = 'padding: 20px'>
+        <h1>Welcome to Noej Hospital</h1>
+        <h2>How can we help you today?</h2>
+    </div>
+    <div class='row'>
+        <div class = 'col-lg-6 bg-info' style ='padding: 20px; padding-left: 50px; padding-right: 50px;'>
+            <div class ='text-center'>
+                <h4>Patients List</h4>
+            </div>
+            <div class = 'row' style = 'padding: 20px; padding-bottom: 10px;'>
+                <p style = 'text-align: center; margin-left: 10px; background-color: rgb(100, 182, 94); width: 220px;'>Name</p>
+                <p style = 'text-align: center; margin-left: 10px; background-color: rgb(100, 182, 94); width: 220px;'>Age</p>
+                <p style = 'text-align: center; margin-left: 10px; background-color: rgb(100, 182, 94); width: 220px;'>Patient Status</p>
+            </div>
+            <% data.forEach((name) => { %>
+                <div class = 'row' style = 'padding: 20px; padding-top: 10px;'>
+                    <a href='./<%- name.id %>' style = 'text-align: center; margin-left: 10px; margin-bottom: 16px; background-color: rgb(36, 100, 31); width: 220px; color: white; text-decoration: none;'> <%- name.name %> </a>
+                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- name.age %></p>
+                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- name.status %></p>
+                </div>
+            <% }) %>
+        </div>
+        <div class = 'col-lg-6 bg-info' style ='padding: 20px; padding-left: 50px; padding-right: 50px;'>
+            <div class = 'text-center'>
+                <h4>Register a new patient</h4>
+            </div>
+            <div>
+                <form method="post">
+                    <div class = 'row'>
+                        <label>Name</label>
+                        <input type="text" name="name" style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                        <label>Age</label>
+                        <input type="number" name="age" style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                        <label>Healt Plan</label>
+                        <select name='hp' style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                            <option value = 'none'>None</option>
+                            <option value = 'uniped'>Uniped</option>
+                            <option value = 'aplida'>Aplida</option>
+                            <option value = 'avil'>Avil</option>
+                        </select>
+                    </div>
+                    <div class= 'row'>
+                        <label>Medic</label>
+                        <input type="text" name="medic" style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                        <label>Patient Status</label>
+                        <select name='status' style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                                <option disabled selected>- -</option>
+                                <option value = 'Sorting'>Sorting</option>
+                                <option value = 'Reception'>Reception</option>
+                                <option value = 'Clinical Care'>Clinical Care</option>
+                            </select>
+                    </div>
+                    <div class = 'row'>
+                        <label>Hospital Identification</label>
+                        <input value='2019080001' type="text" name="hid" style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                    </div>
+                    <div class = 'text-center'>
+                        <button class='btn btn-dark'>New Patient</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

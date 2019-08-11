@@ -1,0 +1,28 @@
+<div class="container" style="font-family: Roboto; margin-top: 50px; padding: 20px;">
+    <div class='row bg-success' style='padding: 20px;'>
+        <h3>Patient Information</h3>
+    </div>
+    <div class = 'row bg-info' style='padding: 20px; padding-bottom: 5px;'>
+        <p style='margin: 10px;'>Name: <%- data.name %></p><br>
+        <p style='margin: 10px;'>Age: <%- data.age %></p><br>
+        <p style='margin: 10px;'>Health Plan: <%- data.hp %></p><br>
+        <p style='margin: 10px;'>Medic: <%- data.medic %></p><br>
+        <p style='margin: 10px;'>Hospital Identification: <%- data.hid %></p><br>
+    </div>
+    <div class='row bg-info' style='padding: 20px; padding-top: 5px;'>
+        <p style='margin: 10px;'>Entry date: <%- data.date %></p><br>
+        <p style='margin: 10px;'>Status: <%- data.status %></p><br>
+    </div>
+    <div class='row bg-info' style='padding: 20px;'>
+        <button class="btn-dark" onclick="deletePATIENT('<%- data._id %>')" style="float: right; margin-right: 20px; padding: 5px;"> Delete Patient </button>
+    </div>
+  </div>
+
+<script>
+    function deletePATIENT(){
+        fetch(`http://localhost:8000/${id}`, {
+            method: 'DELETE'
+        })
+        return location.reload()
+    }
+</script>
