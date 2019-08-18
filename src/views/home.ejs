@@ -13,11 +13,11 @@
                 <p style = 'text-align: center; margin-left: 10px; background-color: rgb(100, 182, 94); width: 220px;'>Age</p>
                 <p style = 'text-align: center; margin-left: 10px; background-color: rgb(100, 182, 94); width: 220px;'>Patient Status</p>
             </div>
-            <% data.forEach((name) => { %>
+            <% data.forEach((item) => { %>
                 <div class = 'row' style = 'padding: 20px; padding-top: 10px;'>
-                    <a href='./<%- name.id %>' style = 'text-align: center; margin-left: 10px; margin-bottom: 16px; background-color: rgb(36, 100, 31); width: 220px; color: white; text-decoration: none;'> <%- name.name %> </a>
-                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- name.age %></p>
-                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- name.status %></p>
+                    <a href='./<%- item.id %>' style = 'text-align: center; margin-left: 10px; margin-bottom: 16px; background-color: rgb(36, 100, 31); width: 220px; color: white; text-decoration: none;'> <%- item.name %> </a>
+                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- item.age %></p>
+                    <p style = 'text-align: center; margin-left: 10px; background-color: rgb(36, 100, 31); width: 220px;'><%- item.status %></p>
                 </div>
             <% }) %>
         </div>
@@ -44,7 +44,7 @@
                         <label>Medic</label>
                         <input type="text" name="medic" style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
                         <label>Patient Status</label>
-                        <select name='status' style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                        <select name='status' style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;" required>
                                 <option disabled selected>- -</option>
                                 <option value = 'Sorting'>Sorting</option>
                                 <option value = 'Reception'>Reception</option>

@@ -14,15 +14,28 @@
         <p style='margin: 10px;'>Status: <%- data.status %></p><br>
     </div>
     <div class='row bg-info' style='padding: 20px;'>
-        <button class="btn-dark" onclick="deletePATIENT('<%- data._id %>')" style="float: right; margin-right: 20px; padding: 5px;"> Delete Patient </button>
+        <button class="btn-dark" onclick="deletePATIENT('<%- data.id %>')" style="float: right; margin-right: 20px; padding: 5px;"> Delete Patient </button>
     </div>
-  </div>
+    <div>
+        <form method='POST'>
+            <label>New patient Status</label>
+            <select name='new_status' style="margin-left: 5px; margin-right: 20px; margin-bottom: 20px;">
+                <option disabled selected>- -</option>
+                <option value = 'Sorting'>Sorting</option>
+                <option value = 'Reception'>Reception</option>
+                <option value = 'Clinical Care'>Clinical Care</option>
+            </select>
+            <button class='btn btn-dark'>Update Status</button>
+        </form>
+    </div>
+</div>
 
 <script>
-    function deletePATIENT(){
+    function deletePATIENT(id){
+        console.log('chamou')
         fetch(`http://localhost:8000/${id}`, {
             method: 'DELETE'
         })
-        return location.reload()
+        return location.replace('/')
     }
 </script>

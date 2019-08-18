@@ -2,7 +2,7 @@ const express = require('express');
 const server = express();
 const morgan = require('morgan');
 const cors = require('cors');
-const expressLayouts = require ('express-ejs-layouts');
+const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 
 //Configuração das Bibliotecas

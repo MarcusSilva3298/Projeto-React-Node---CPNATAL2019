@@ -3,7 +3,7 @@ const Patient = require('./models/models');
 
 router.route('/')
     .get((req, res) =>{
-        Patient.find({name: req.body.name})
+        Patient.find({})
             .then(response => res.render('home', {data: response}) )
             .catch( err => console.log(err))
     })
@@ -28,19 +28,26 @@ router.route('/')
         res.redirect('/');
     })
 
-/*
+
 router.route('/:id')
     .get((req, res, next) =>{
-        Patient.findOne({id:req.params.id})
+        Patient.findOne({_id:req.params.id})
             .then(response =>{ res.render('item', {data: response})})
             .catch(err => console.log(err))
     })
 
-    .delete(req, res, next =>{
+    .delete((req, res, next) =>{
         Patient.findByIdAndDelete(req.params.id)
-            .then(response => console.log ('Deletado'))
+            .then(response => console.log ('Deletado: ' + response.name))
+            .catch(err => console.log(err));
+        res.redirect('/');
+    })
+
+    .post((req, res, next) => {
+        Patient.findByIdAndUpdate(req.params.id, {status: req.body.new_status})
+            .then(response => console.log('Status update: ' + response.new_status))
             .catch(err => console.log(err));
         res.redirect('/')
     })
-    */
+
 module.exports = router;

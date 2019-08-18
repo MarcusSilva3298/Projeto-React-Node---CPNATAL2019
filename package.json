@@ -1,5 +1,5 @@
 {
-  "name": "projeto-node",
+  "name": "projeto-test-1",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -14,8 +14,8 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.6.7",
-    "morgan": "^1.9.1",
-    "nodemon": "^1.19.1"
+    "express-layouts": "^1.0.0",
+    "mongoose": "^5.6.9",
+    "morgan": "^1.9.1"
   }
 }
